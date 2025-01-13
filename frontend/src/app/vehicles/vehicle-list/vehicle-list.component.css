@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0 20px; /* Agrega espacio a los lados */
+}
+
+.vehicle-table {
+  width: 100%;
+  max-width: 1200px; /* Limita el ancho de la tabla */
+  margin: 0 auto; /* Centra la tabla */
+  border-collapse: collapse;
+  color: #e6e6e6;
+  margin-top: 1rem;
+}
+
+h2 {
+  text-align: center;
+  color: #339f79;
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.add-vehicle {
+  text-align: left;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0 70px;
+}
+
+.add-btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #5b9c8b, #438574);
+  color: #e6e6e6;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  width: auto;
+  display: inline-block;
+}
+
+.add-btn:hover {
+  background: linear-gradient(145deg, #73b3a1, #5b9c8b);
+}
+
+.vehicle-table th, .vehicle-table td {
+  padding: 10px;
+  text-align: center;
+}
+
+.vehicle-table th {
+  background: linear-gradient(145deg, #438574, #2b6d5e);
+  box-shadow: 5px 5px 15px #2b6d5e, -5px -5px 15px #5b9c8b;
+}
+
+.vehicle-table td {
+  background: rgba(11, 77, 59, 0.5);
+}
+
+.vehicle-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #438574, #5b9c8b);
+  color: #e6e6e6;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+  background: #2b6d5e;
+  cursor: not-allowed;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.edit-btn {
+  background: linear-gradient(145deg, #5b9c8b, #438574); /* Igual al de agregar */
+}
+
+.delete-btn {
+  background: linear-gradient(145deg, #6c9dec, #5275c1); /* Azul para Eliminar */
+}
+
+.unavailable-row {
+  background-color: rgb(241, 48, 48);
+  color: white;
+}
+
+.vehicle-image {
+  max-width: 100px;
+  height: auto;
+}

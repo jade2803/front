@@ -1,0 +1,64 @@
+.maintenance-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fbfbfb; /* Fondo oscuro */
+    color: #e6e6e6;
+  }
+  
+  .maintenance-container h2 {
+    color: #339f79;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .maintenance-container button{
+    color: #339f79;
+    font-size: 1.3rem;
+  }
+  
+  .vehicle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1d2b28; /* Fondo oscuro para tarjetas */
+    padding: 20px;
+    margin: 15px;
+    border-radius: 15px;
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(67, 133, 116, 0.8);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .vehicle-card h3 {
+    color: #339f79;
+    margin: 10px 0;
+  }
+  
+  .vehicle-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .details-info {
+    text-align: left;
+    width: 100%;
+  }
+  
+  .details-info p {
+    margin: 5px 0;
+  }
+  
+  .details-info strong {
+    color: #1ce7ad;
+  }
+  
+  .no-vehicles {
+    margin-top: 20px;
+    color: #c2bfbf;
+    font-size: 1.2rem;
+  }  

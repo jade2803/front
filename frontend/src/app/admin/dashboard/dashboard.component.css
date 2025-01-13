@@ -1,0 +1,17 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/0_Kia_Morning_%28JA%29_FL_1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    filter: grayscale(50%);
+  }
+  h1 {
+    text-align: center;
+    color: #e6e6e6;
+    margin-bottom: 1.5rem;
+  }

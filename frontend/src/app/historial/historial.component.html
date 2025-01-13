@@ -1,0 +1,54 @@
+<div *ngIf="isLoading" class="loading-container spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!isLoading">
+  <table mat-table [dataSource]="dataSource" class="employee-table">
+
+    <ng-container matColumnDef="vehicle">
+      <th mat-header-cell *matHeaderCellDef> Vehículo </th>
+      <td mat-cell *matCellDef="let element"> {{ element.vehicle.model }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="startDate">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Inicio </th>
+      <td mat-cell *matCellDef="let element"> {{ element.start_date | date }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="endDate">
+      <th mat-header-cell *matHeaderCellDef> Fecha de Fin </th>
+      <td mat-cell *matCellDef="let element"> {{ element.end_date | date }} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef> Estado </th>
+      <td mat-cell *matCellDef="let element" 
+          [ngClass]="{
+            'status-confirmed-row': element.status === 'Confirmed',
+            'status-cancelled-row': element.status === 'Cancelled',
+            'status-completed-row': element.status === 'Completed'
+          }">
+        {{ element.status }}
+      </td>
+    </ng-container>
+
+    <!-- Columna Acción con botón Cancelar -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Acción </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button 
+                *ngIf="element.status !== 'Cancelled' && element.status !== 'Completed'"
+                (click)="confirmCancel(element)">
+          Cancelar
+        </button>
+      </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{
+      'status-confirmed-row': row.status === 'Confirmed',
+      'status-cancelled-row': row.status === 'Cancelled',
+      'status-completed-row': row.status === 'Completed'
+    }"></tr>
+  </table>
+</div>

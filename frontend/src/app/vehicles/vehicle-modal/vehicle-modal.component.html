@@ -1,0 +1,87 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Editar Vehículo' : 'Agregar Vehículo' }}</h2>
+<form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+  <!-- Campo de selección de marca -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Marca</mat-label>
+    <mat-select formControlName="brand" (selectionChange)="onBrandChange($event.value)" required>
+      <mat-option *ngFor="let brand of carBrands" [value]="brand">{{ brand }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Campo de selección de modelo -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Modelo</mat-label>
+    <mat-select formControlName="model" required>
+      <mat-option *ngFor="let model of filteredModels" [value]="model">{{ model }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Campo de entrada de placa -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Placa</mat-label>
+    <input name="placa" matInput formControlName="license_plate" required />
+  </mat-form-field>
+
+  <!-- Campo de tarifa de renta -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Tarifa de Renta</mat-label>
+    <input name="tarifa" matInput type="number" formControlName="rental_rate" required />
+  </mat-form-field>
+
+  <!-- Campo de estado -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Estado</mat-label>
+    <mat-select name="estado" formControlName="status" required>
+      <mat-option value="Available">Disponible</mat-option>
+      <mat-option value="Maintenance">Mantenimiento</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Campo de asientos -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Asientos</mat-label>
+    <input name="asientos" matInput type="number" formControlName="seats" required />
+  </mat-form-field>
+
+  <!-- Campo de puertas -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Puertas</mat-label>
+    <input name="puertas" matInput type="number" formControlName="doors" required />
+  </mat-form-field>
+
+  <!-- Campo de tamaño de cajuela -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Tamaño Cajuela (L)</mat-label>
+    <input name="cajuela" matInput type="number" formControlName="trunk_size" required />
+  </mat-form-field>
+
+  <!-- Campo de color -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Color</mat-label>
+    <mat-select formControlName="color" required>
+      <mat-option *ngFor="let color of carColors" [value]="color">{{ color }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Campo de tipo de gasolina -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Tipo de Gasolina</mat-label>
+    <mat-select name="gasolina" formControlName="fuel_type" required>
+      <mat-option value="Extra">Extra</mat-option>
+      <mat-option value="Diesel">Diesel</mat-option>
+      <mat-option value="Super">Super</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <!-- Campo de URL de imagen -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>URL de Imagen</mat-label>
+    <input name="url" matInput formControlName="imageUrl" required />
+  </mat-form-field>
+
+  <!-- Botones de acción -->
+  <div mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="onCancel()">Cancelar</button>
+    <button mat-button color="primary" type="submit" [disabled]="vehicleForm.invalid">Guardar</button>
+  </div>
+</form>

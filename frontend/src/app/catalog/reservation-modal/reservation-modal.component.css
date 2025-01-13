@@ -1,0 +1,45 @@
+/* src/app/reservation-modal/reservation-modal.component.css */
+.mat-form-field {
+    margin-bottom: 16px;
+  }
+  
+  .mat-radio-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  ::ng-deep .mat-dialog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .dialog-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .action-buttons button {
+    margin-left: 8px;
+  }
+    

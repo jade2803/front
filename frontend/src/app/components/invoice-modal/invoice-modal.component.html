@@ -1,0 +1,119 @@
+<h2 mat-dialog-title>Facturación</h2>
+
+<form (ngSubmit)="onSubmitInvoice($event)" #invoiceForm="ngForm" autocomplete="off">
+  <!-- Cédula -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Cédula</mat-label>
+    <input
+      matInput
+      name="identification"
+      type="text"
+      [(ngModel)]="invoiceData.identification"
+      required
+      minlength="10"
+      maxlength="13"
+      pattern="^\d{10}$|^\d{13}$"
+      #cedula="ngModel"
+    />
+    <mat-error *ngIf="cedula.invalid && cedula.touched">
+      Cédula o RUC inválido
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Nombre -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Nombre</mat-label>
+    <input
+      matInput
+      name="firstName"
+      type="text"
+      [(ngModel)]="invoiceData.firstName"
+      required
+      pattern="^[A-Za-z\s]+$"
+      #firstName="ngModel"
+    />
+    <mat-error *ngIf="firstName.invalid && firstName.touched">
+      Nombre inválido
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Apellido -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Apellido</mat-label>
+    <input
+      matInput
+      name="lastName"
+      type="text"
+      [(ngModel)]="invoiceData.lastName"
+      required
+      pattern="^[A-Za-z\s]+$"
+      #lastName="ngModel"
+    />
+    <mat-error *ngIf="lastName.invalid && lastName.touched">
+      Apellido inválido
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Teléfono -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Teléfono</mat-label>
+    <input
+      matInput
+      name="phone"
+      type="text"
+      [(ngModel)]="invoiceData.phone"
+      required
+      pattern="^[0-9]{10}$"
+    />
+    <mat-error *ngIf="!invoiceData.phone || !phonePattern.test(invoiceData.phone)">
+      Ingresa un número de teléfono válido de 10 dígitos.
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Tabla de detalles -->
+  <h3 mat-dialog-title>Detalles de Facturación</h3>
+  <div class="details-table-container">
+    <table class="details-table">
+      <thead>
+        <tr>
+          <th>Descripción</th>
+          <th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of invoiceData.items">
+          <td>{{ item.description }}</td>
+          <td>{{ item.price | currency:'USD':'symbol':'1.2-2' }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Subtotal</td>
+          <td>{{ calculateTotals().subtotal | currency:'USD':'symbol':'1.2-2' }}</td>
+        </tr>
+        <tr>
+          <td>IVA (15%)</td>
+          <td>{{ calculateTotals().iva | currency:'USD':'symbol':'1.2-2' }}</td>
+        </tr>
+        <tr>
+          <td><strong>Total</strong></td>
+          <td><strong>{{ calculateTotals().pago | currency:'USD':'symbol':'1.2-2' }}</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <!-- Acciones -->
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()" [disabled]="isSubmitting">Cancelar</button>
+    <button
+      mat-button
+      type="button"
+      color="primary"
+      (click)="onFacturar()"
+      [disabled]="!invoiceForm.valid || isSubmitting"
+    >
+      <span *ngIf="!isSubmitting">Facturar</span>
+      <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
+    </button>
+  </div>
+</form>

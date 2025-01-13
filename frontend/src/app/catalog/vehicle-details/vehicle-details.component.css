@@ -1,0 +1,104 @@
+/* Contenedor principal */
+.vehicle-details {
+  display: flex;
+  flex-direction: column; /* Primero el título, luego la imagen y el texto */
+  justify-content: flex-start;
+  align-items: center; /* Centra los elementos en el eje horizontal */
+  padding: 20px;
+  width: 70%;
+  max-width: 1200px;
+  background-color: #1d2b28; /* Fondo oscuro */
+  border-radius: 15px;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(67, 133, 116, 0.8); /* Sombra */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+/* Estilo del título */
+.vehicle-details h2 {
+  color: #339f79;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Contenedor para la imagen y el texto */
+.details-container {
+  display: flex;
+  flex-direction: row; /* Imagen y texto al lado */
+  justify-content: space-between; /* Separar la imagen y el texto */
+  width: 100%; /* Contenedor a todo el ancho */
+  gap: 20px; /* Espacio entre la imagen y el texto */
+}
+
+/* Imagen del vehículo */
+.vehicle-image {
+  width: 40%; /* Ajusta el tamaño de la imagen */
+  height: 300px; /* Ajusta la altura */
+  object-fit: cover; /* Mantiene las proporciones */
+  border-radius: 8px; /* Bordes redondeados */
+  margin-bottom: 0; /* Eliminamos el margen inferior */
+}
+
+/* Detalles del vehículo */
+.details-info {
+  color: #e6e6e6;
+  width: 55%; /* Aseguramos que el texto ocupe el resto del espacio */
+  margin-top: 0; /* Separación entre los detalles y la imagen */
+}
+
+/* Detalles de la información (placa, precio, etc.) */
+.details-info p {
+  margin: 0.5rem 0;
+}
+
+.details-info strong {
+  color: #1ce7ad; /* Color para los textos destacados */
+}
+
+/* Botón de reserva */
+.reserve-button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #5b9c8b, #438574);
+  color: #e6e6e6;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+  width: 100%;
+  max-width: 200px; /* Limita el tamaño del botón */
+  margin-top: 20px; /* Separación entre el texto y el botón */
+  margin-left: 0;
+}
+
+/* Hover para el botón de reserva */
+.reserve-button:hover {
+  background: linear-gradient(145deg, #73b3a1, #5b9c8b);
+}
+
+/* Ajustes generales para la página */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #2c3e50; /* Fondo oscuro para el body */
+  color: #e6e6e6;
+}
+
+/* Estilo para los botones adicionales */
+button {
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05); /* Efecto de aumento en el hover */
+}
+
+button:active {
+  transform: scale(0.98); /* Efecto de reducción al presionar */
+}

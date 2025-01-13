@@ -1,0 +1,52 @@
+<div class="report-container">
+    <h2>Reporte de Mantenimientos</h2>
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Descripción</th>
+          <th>Total Gastos</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let record of maintenanceRecords">
+          <td>{{ record.id }}</td>
+          <td>{{ record.aceite_motor_filtro }} | {{ record.filtro_aire }} | {{ record.llantas }} | ... </td>
+          <td>{{ record.total_gastos | currency }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total Gastos</td>
+          <td class="total-cell">{{ expensesTotal | currency }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  
+  <div class="report-container">
+    <h2>Reporte de Ventas</h2>
+    <table class="report-table">
+      <thead>
+        <tr>
+          <th>Cédula</th>  
+          <th>Nombre</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let invoice of salesInvoices">
+            <td>{{ invoice.cedula_id }}</td>
+            <td>{{ invoice.name }}</td>
+          <td>{{ invoice.total | currency }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Total Ventas</td>
+          <td class="total-cell">{{ salesTotal | currency }}</td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  

@@ -1,0 +1,21 @@
+<div class="maintenance-container">
+    <h2>Vehículos en Mantenimiento</h2>
+  
+    <div *ngIf="vehicles.length === 0" class="no-vehicles">
+      <p>No hay vehículos en mantenimiento actualmente.</p>
+    </div>
+  
+    <div *ngFor="let vehicle of vehicles" class="vehicle-card">
+      <h3>{{ vehicle.brand }} {{ vehicle.model }}</h3>
+      <img [src]="vehicle.imageUrl" alt="{{ vehicle.brand }} {{ vehicle.model }}" class="vehicle-image">
+      <div class="details-info">
+        <p><strong>Placa:</strong> {{ vehicle.license_plate }}</p>
+        <p><strong>Precio de alquiler:</strong> ${{ vehicle.rental_rate }}</p>
+        <p><strong>Estado:</strong> {{ vehicle.status }}</p>
+        <p><strong>Color:</strong> {{ vehicle.color }}</p>
+        <p><strong>Tipo de gasolina:</strong> {{ vehicle.fuel_type }}</p>
+        <button mat-button (click)="openInspectionModal(vehicle)">Inspeccionar</button>
+      </div>     
+    </div>
+  </div>
+  

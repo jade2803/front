@@ -1,0 +1,32 @@
+<div class="employee-management-container">
+  <h2>Lista de Empleados</h2>
+  <button (click)="onAddEmployee()" class="add-btn">Agregar Empleado</button>
+
+  <table class="employee-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Rol</th>
+        <th>Contraseña</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.email }}</td>
+        <td>{{ employee.role }}</td>
+        <td>{{ employee.password }}</td>
+        <td>
+          <button (click)="onEditEmployee(employee)" class="edit-btn">Editar</button>
+          <button (click)="onDeleteUser(employee.id)" class="delete-btn">Eliminar</button>
+        </td>        
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+

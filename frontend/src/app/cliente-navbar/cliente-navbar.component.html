@@ -1,0 +1,10 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li><a (click)="navigateToBranchesC()" class="nav-item">Catálogo</a></li>
+    <li><a (click)="navigateToHistorial()" class="nav-item">Historial</a></li>
+    <li><a (click)="navigateToBranchesS()" class="nav-item">Sucursales</a></li>
+    <li *ngIf="isAuthenticated()">
+      <button (click)="logout()" class="logout-btn">Cerrar Sesión</button>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,38 @@
+<h2 mat-dialog-title>Inspección de Vehículo</h2>
+<div mat-dialog-content>
+  <div class="vehicle-info">
+    <p><strong>Marca:</strong> {{ vehicle.brand }}</p>
+    <p><strong>Modelo:</strong> {{ vehicle.model }}</p>
+    <p><strong>Color:</strong> {{ vehicle.color }}</p>
+  </div>
+
+  <div class="inspection-container">
+    <div *ngFor="let item of inspectionItems" class="inspection-item">
+      <label class="item-label">{{ item.label }}</label>
+      <div class="item-actions">
+        <mat-form-field appearance="outline" class="status-select">
+          <mat-label>Estado</mat-label>
+          <mat-select [(ngModel)]="item.status" (selectionChange)="onStatusChange(item)">
+            <mat-option value="Bueno">Bueno</mat-option>
+            <mat-option value="Dañado">Dañado</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" *ngIf="item.status === 'Dañado'" class="cost-input">
+          <mat-label>Gasto de Refacción</mat-label>
+          <input matInput type="number" [(ngModel)]="item.cost" (input)="calculateTotal()" />
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="total-cost">
+    <mat-form-field appearance="outline">
+      <mat-label>Gasto Total</mat-label>
+      <input matInput [value]="totalCost" readonly />
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button color="primary" [mat-dialog-close]="inspectionItems">Guardar</button>
+</div>

@@ -1,0 +1,64 @@
+/* Contenedor principal */
+.table-container {
+    width: 100%;
+    gap: 20px; /* Espacio entre elementos */
+  }
+  
+  /* Título */
+  .table-container h2 {
+    color: #2b6d5e;
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Tabla */
+  .table-container table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #e6e6e6;
+  }
+  
+  .table-container th,
+  .table-container td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table-container th {
+    background: linear-gradient(145deg, #438574, #2b6d5e);
+    color: #fff;
+  }
+  
+  .table-container td {
+    background: rgba(11, 77, 59, 0.5);
+  }
+  
+  /* Hover */
+  .table-container tr:hover {
+    background-color: rgba(11, 77, 59, 0.8);
+  }
+  
+  /* Spinner */
+  .loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Botón de color azul */
+  .table-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .table-container button:hover {
+    background-color: #0056b3;
+  }
+  

@@ -1,0 +1,36 @@
+<h2 mat-dialog-title class="dialog-title">Reservar Vehículo</h2>
+<form [formGroup]="reservationForm" (ngSubmit)="onSubmit()" class="modal-form">
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Fecha y Hora de Inicio</mat-label>
+    <input matInput formControlName="start_date" type="datetime-local" [min]="minDate" required />
+    <mat-error *ngIf="reservationForm.get('start_date')?.hasError('dateInvalid')">
+      {{ getDateErrorMessage('start_date') }}
+    </mat-error>
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Fecha y Hora de Fin</mat-label>
+    <input matInput formControlName="end_date" type="datetime-local" [min]="minDate" required />
+    <mat-error *ngIf="reservationForm.get('end_date')?.hasError('dateInvalid') || reservationForm.hasError('endDateInvalid')">
+      {{ getDateErrorMessage('end_date') }}
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" class="full-width" disabled>
+    <mat-label>Total Calculado</mat-label>
+    <input matInput [value]="total.toFixed(2) | currency:'USD':'symbol'" readonly />
+  </mat-form-field>
+  
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Monto de Garantía</mat-label>
+    <input matInput formControlName="warranty" type="number" required />
+    <mat-error *ngIf="reservationForm.get('warranty')?.hasError('warrantyInvalid')">
+      {{ getWarrantyErrorMessage() }}
+    </mat-error>
+  </mat-form-field>
+
+  <div mat-dialog-actions class="action-buttons">
+    <button mat-button type="button" (click)="onCancel()">Cancelar</button>
+    <button mat-button color="primary" type="submit" [disabled]="reservationForm.invalid">Reservar</button>
+  </div>
+</form>

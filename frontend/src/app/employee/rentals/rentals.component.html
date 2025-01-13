@@ -1,0 +1,71 @@
+<div class="employee-management-container">
+    <h2>Gestión de Reservaciones</h2>
+  
+    <div *ngIf="isLoading" class="spinner-container">
+      <mat-spinner></mat-spinner>
+      <p>Cargando datos...</p>
+    </div>
+  
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      class="mat-elevation-z8 employee-table"
+      *ngIf="!isLoading && dataSource.length > 0"
+    >
+      <!-- Columna para el Nombre del Cliente -->
+      <ng-container matColumnDef="customerName">
+        <th mat-header-cell *matHeaderCellDef> Cliente </th>
+        <td mat-cell *matCellDef="let reservation">
+          {{ reservation.customer.name }}
+        </td>
+      </ng-container>
+  
+      <!-- Columna para los Detalles del Vehículo -->
+      <ng-container matColumnDef="vehicleDetails">
+        <th mat-header-cell *matHeaderCellDef> Vehículo </th>
+        <td mat-cell *matCellDef="let reservation">
+          {{ reservation.vehicle.brand }}
+          {{ reservation.vehicle.model }}
+          ({{ reservation.vehicle.license_plate }})
+        </td>
+      </ng-container>
+  
+      <!-- Columna para la Fecha de Inicio -->
+      <ng-container matColumnDef="startDate">
+        <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
+        <td mat-cell *matCellDef="let reservation">
+          {{ reservation.start_date | date: 'short' }}
+        </td>
+      </ng-container>
+  
+      <!-- Columna para la Fecha de Fin -->
+      <ng-container matColumnDef="endDate">
+        <th mat-header-cell *matHeaderCellDef> Fecha Fin </th>
+        <td mat-cell *matCellDef="let reservation">
+          {{ reservation.end_date | date: 'short' }}
+        </td>
+      </ng-container>
+  
+      <!-- Columna para el Estado -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let reservation">
+          {{ reservation.status }}
+        </td>
+      </ng-container>
+  
+      <!-- Header Row -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <!-- Data Rows -->
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns;"
+        [ngClass]="{
+          'status-confirmed-row': row.status === 'Confirmed',
+          'status-cancelled-row': row.status === 'Cancelled',
+          'status-completed-row': row.status === 'Completed'
+        }"
+      ></tr>
+    </table>
+  </div>
+  

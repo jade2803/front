@@ -1,0 +1,53 @@
+<h2 mat-dialog-title>Registrar Devolución</h2>
+<form (ngSubmit)="onSubmit($event)" #returnForm="ngForm" autocomplete="off">
+  <!-- Fecha y Hora de Devolución -->
+  <mat-form-field appearance="fill" class="full-width">
+    <mat-label>Fecha y Hora de Devolución</mat-label>
+    <input 
+      matInput 
+      name="returnDate" 
+      type="datetime-local" 
+      [(ngModel)]="returnData.returnDate" 
+      [min]="minDate" 
+      required
+    />
+    <mat-error *ngIf="!returnData.returnDate">Por favor ingresa una fecha válida.</mat-error>
+    <mat-error *ngIf="isDateInPast()">La fecha debe ser posterior a la fecha actual.</mat-error>
+  </mat-form-field>  
+
+  <!-- Condición del Vehículo -->
+  <mat-form-field appearance="fill">
+    <mat-label>Condición del Vehículo</mat-label>
+    <mat-select [(ngModel)]="returnData.vehicleCondition" name="vehicleCondition" required>
+      <mat-option value="Good">Bueno</mat-option>
+      <mat-option value="Damaged">Dañado</mat-option>
+    </mat-select>
+    <mat-error *ngIf="!returnData.vehicleCondition">Selecciona la condición del vehículo.</mat-error>
+  </mat-form-field>
+
+  <!-- Cargo Adicional -->
+  <mat-form-field appearance="fill">
+    <mat-label>Cargo Adicional</mat-label>
+    <input 
+      matInput 
+      type="number" 
+      [(ngModel)]="returnData.additionalCharge" 
+      name="additionalCharge" 
+      min="0" 
+      step="0.01" 
+      required
+    />
+    <mat-error *ngIf="returnData.additionalCharge === null || returnData.additionalCharge < 0">
+      Por favor ingresa un cargo adicional válido.
+    </mat-error>
+  </mat-form-field>
+
+  <!-- Acciones -->
+  <div mat-dialog-actions>
+    <button mat-button (click)="onCancel()" [disabled]="isSubmitting">Cancelar</button>
+    <button mat-button type="submit" color="primary" [disabled]="!returnForm.valid || isSubmitting">
+      <span *ngIf="!isSubmitting">Registrar</span>
+      <mat-spinner *ngIf="isSubmitting" diameter="20"></mat-spinner>
+    </button>
+  </div>
+</form>

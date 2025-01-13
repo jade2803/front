@@ -1,0 +1,25 @@
+<div class="employee-container">
+  <!-- Barra de navegación -->
+  <nav class="navbar">
+    <ul class="nav-list">
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a routerLink="/employee/rentals">Alquileres</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a routerLink="/employee/returns">Devoluciones</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a routerLink="/employee/availability">Disponibilidad</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']">
+        <a routerLink="/employee/billing">Facturación</a>
+      </li>
+    </ul>
+    <button class="logout-btn" (click)="logout()">Cerrar sesión</button>
+  </nav>
+  <body>
+    <div class="container">
+    <router-outlet></router-outlet>
+    </div>
+</body>
+</div>

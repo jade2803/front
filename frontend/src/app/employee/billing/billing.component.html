@@ -1,0 +1,30 @@
+<div class="table-container">
+    <h2>Facturación</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Fecha de Emisión</th>
+          <th>Condición del Vehículo</th>
+          <th>Cargo Adicional</th>
+          <th>Total</th>
+          <th>Garantía</th>
+          <th>Acción</th> <!-- Nueva columna para el botón -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bill of filteredBillingData">
+          <td>{{ bill.id }}</td>
+          <td>{{ bill.issue_date | date }}</td>
+          <td>{{ bill.return?.vehicle_condition }}</td>
+          <td>{{ bill.return?.additional_charge }}</td>
+          <td>{{ bill.return?.reservation?.total }}</td>
+          <td>{{ bill.return?.reservation?.warranty }}</td>
+          <td>
+            <button (click)="openInvoiceModal(bill)">Facturar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

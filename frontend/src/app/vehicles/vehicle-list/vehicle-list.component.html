@@ -1,0 +1,54 @@
+<body>
+  <div class="container">
+    <h2>Lista de Vehículos</h2>
+    <div class="add-vehicle">
+      <button name="Agregar" (click)="onAddVehicle()" class="add-btn">Agregar Vehículo</button>
+    </div>
+  
+    <table class="vehicle-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Marca</th>
+          <th>Modelo</th>
+          <th>Placa</th>
+          <th>Disponible</th>
+          <th>Tarifa de Alquiler</th>
+          <th>Estado</th>
+          <th>Fecha de Creación</th>
+          <th>Imagen</th>
+          <th>Asientos</th>
+          <th>Puertas</th>
+          <th>Tamaño Cajuela</th>
+          <th>Color</th>
+          <th>Tipo de Gasolina</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let vehicle of vehicles" [ngClass]="{'unavailable-row': !vehicle.available}">
+          <td>{{ vehicle.id }}</td>
+          <td>{{ vehicle.brand }}</td>
+          <td>{{ vehicle.model }}</td>
+          <td>{{ vehicle.license_plate }}</td>
+          <td>{{ vehicle.available ? 'Sí' : 'No' }}</td>
+          <td>{{ vehicle.rental_rate | currency }}</td>
+          <td>{{ vehicle.status }}</td>
+          <td>{{ vehicle.created_at | date:'short' }}</td>
+          <td>
+            <img [src]="vehicle.imageUrl" alt="{{ vehicle.brand }} {{ vehicle.model }}" class="vehicle-image">
+          </td>
+          <td>{{ vehicle.seats }}</td>
+          <td>{{ vehicle.doors }}</td>
+          <td>{{ vehicle.trunk_size }} L</td>
+          <td>{{ vehicle.color }}</td>
+          <td>{{ vehicle.fuel_type }}</td>
+          <td>
+            <button name="editar" (click)="onEditVehicle(vehicle)" class="edit-btn">Editar</button>
+            <button name="eliminar" (click)="onDeleteVehicle(vehicle.id)" class="delete-btn">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

@@ -1,0 +1,105 @@
+/* Estilos generales */
+.branches-container {
+  padding: 2rem;
+  background: linear-gradient(145deg, #22836e, #529b8a);
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.4), -8px -8px 16px rgba(67, 133, 116, 0.8);
+  border-radius: 15px;
+  color: #f8f8f8;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  color: #1ce7ad;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Mapa */
+.map-container {
+  margin-bottom: 2rem;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 2px solid #135647;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Información de contacto */
+.contact-info {
+  background: #135647;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5), -4px -4px 12px rgba(67, 133, 116, 0.8);
+}
+
+.contact-info h2 {
+  text-align: center;
+  color: #1ce7ad;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  margin-bottom: 1.5rem;
+  background: linear-gradient(145deg, #22836e, #529b8a);
+  padding: 1.5rem;
+  border-radius: 15px;
+  color: #e6e6e6;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3), -2px -2px 8px rgba(67, 133, 116, 0.5);
+}
+
+.contact-info li strong {
+  color: #f5f1f1;
+  font-size: 1.1rem;
+}
+
+.contact-info a {
+  color: #1ce7ad;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  color: #f5f1f1;
+  text-decoration: underline;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .branches-container {
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info li {
+    font-size: 0.9rem;
+  }
+}
+.social-icon {
+  width: 38px; /* Aproximadamente 1 cm */
+  height: 38px; /* Aproximadamente 1 cm */
+  margin-right: 10px; /* Espaciado entre iconos */
+  transition: transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+  transform: scale(1.2); /* Efecto de aumento al pasar el cursor */
+}

@@ -1,0 +1,86 @@
+/* Contenedor principal */
+.employee-management-container {
+    width: 100%;
+    gap: 20px; /* Espacio entre elementos */
+  }
+  
+  /* Título */
+  .employee-management-container h2 {
+    color: #2b6d5e;
+    font-size: 2rem;
+    text-align: center; /* Alineación centrada */
+    width: 100%;
+  }
+  
+  /* Tabla */
+  .employee-table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #e6e6e6;
+  }
+  
+  .employee-table th,
+  .employee-table td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .employee-table th {
+    background: linear-gradient(145deg, #438574, #2b6d5e);
+    color: #fff;
+  }
+  
+  .employee-table td {
+    background: rgba(11, 77, 59, 0.5);
+  }
+  
+  /* Hover */
+  .employee-table tr:hover {
+    background-color: rgba(1, 25, 19, 0.8);
+  }
+  
+  /* Estilos para el estado Confirmed */
+  .status-confirmed-row {
+    background-color: rgba(20, 62, 38, 0.5);
+  }
+  
+  /* Estilos para el estado Cancelled */
+  .status-cancelled-row {
+    background-color: rgba(231, 76, 60, 0.5);
+  }
+  
+  /* Estilos para el estado Completed */
+  .status-completed-row {
+    background-color: rgba(52, 152, 219, 0.5);
+  }
+  
+  /* Spinner */
+  .spinner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Estilo del botón Cancelar */
+.employee-table button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Estilo del botón al pasar el mouse */
+  .employee-table button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Estilo del botón al hacer clic */
+  .employee-table button:active {
+    background-color: #1c6b91; /* Azul aún más oscuro al hacer clic */
+    border-color: #1c6b91;
+  }
+  

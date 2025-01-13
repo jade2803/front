@@ -1,0 +1,59 @@
+/* Información del vehículo */
+.vehicle-info {
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #333;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  /* Contenedor principal de inspección */
+  .inspection-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Cada ítem de inspección */
+  .inspection-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f0f8ff;
+    padding: 15px;
+    border: 1px solid #d1e3f4;
+    border-radius: 8px;
+  }
+  
+  /* Etiquetas de cada ítem */
+  .item-label {
+    color: #000000;
+  }
+  
+  /* Acciones de cada ítem */
+  .item-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  /* Selector de estado */
+  .status-select {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* Input de costo */
+  .cost-input {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  /* Total de gastos */
+  .total-cost {
+    margin-top: 20px;
+    text-align: right;
+  }
+  

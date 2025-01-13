@@ -1,0 +1,103 @@
+/* Contenedor principal */
+.report-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 20px;
+    width: 100%;
+    gap: 20px;
+  }
+  
+  /* Estilo del título */
+  .report-container h2 {
+    color: #339f79;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Tabla de reportes */
+  .report-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    color: #e6e6e6;
+    background-color: rgba(11, 77, 59, 0.5);
+  }
+  
+  /* Celdas de la tabla */
+  .report-table th, .report-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  /* Encabezado de la tabla */
+  .report-table th {
+    background: linear-gradient(145deg, #438574, #2b6d5e);
+    box-shadow: 5px 5px 15px #2b6d5e, -5px -5px 15px #5b9c8b;
+    color: #fff;
+  }
+  
+  /* Celdas de la tabla */
+  .report-table td {
+    background: rgba(169, 169, 169, 0.3); /* Color gris claro */
+  }
+  
+  /* Fila de la tabla al pasar el mouse */
+  .report-table tr:hover {
+    background-color: rgba(169, 169, 169, 0.5); /* Color gris claro más fuerte */
+  }
+  
+  /* Total debajo de la columna "Total" */
+  .report-table tfoot td {
+    font-weight: bold;
+    color: #1b6a4e;
+    background-color: rgba(169, 169, 169, 0.3); /* Fondo más oscuro para el total */
+  }
+  
+  /* Total en la columna "Ventas" */
+  .report-table tfoot td.total-cell {
+    text-align: right;
+    font-size: 1.2rem;
+  }
+  
+  /* Total al final de la tabla */
+  .report-container h3 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #339f79;
+    text-align: right;
+    width: 100%;
+  }
+  
+  /* Botones dentro de la tabla */
+  .view-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    color: #e6e6e6;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-bottom: 5px;
+    background: linear-gradient(145deg, #6c9dec, #5275c1);
+  }
+  
+  .view-btn:hover {
+    background: linear-gradient(145deg, #7faaf5, #6c9dec);
+  }
+  
+  .view-btn:active {
+    transform: scale(0.98);
+  }
+  
+  /* Cargando reportes */
+  .ng-template p {
+    font-size: 1.2rem;
+    color: #fff;
+  }
+  

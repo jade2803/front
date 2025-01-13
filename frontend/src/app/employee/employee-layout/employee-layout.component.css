@@ -1,0 +1,128 @@
+/* Barra de navegación */
+.navbar {
+  background: linear-gradient(145deg, #5b9c8b, #438574);
+  padding: 15px 30px; /* Aumenta el padding horizontal */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Lista de enlaces */
+.nav-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 100px; /* Aumenta el espacio entre los elementos */
+}
+
+/* Estilo de los enlaces */
+.nav-item a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+.nav-item a:hover {
+  background-color: #007bff; /* Color azul al pasar el mouse */
+  color: white; /* Texto blanco al hacer hover */
+  transform: scale(1.05); /* Efecto de escalado al pasar el mouse */
+}
+
+/* Estilo activo (cuando el enlace está activo) */
+.nav-item a.active {
+  background-color: #28a745; /* Verde para indicar selección */
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Para dispositivos móviles, hacer la navegación más accesible */
+@media (max-width: 768px) {
+  .nav-list {
+    flex-direction: column; /* Poner los elementos en columna en pantallas pequeñas */
+    align-items: stretch; /* Alinear los elementos a la izquierda */
+  }
+
+  .nav-item a {
+    padding: 10px 15px;
+    font-size: 14px; /* Tamaño de fuente más pequeño en pantallas pequeñas */
+  }
+}
+
+/* Estilo para el área de contenido */
+.content {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo para el botón de Cerrar Sesión */
+.logout-btn {
+  background: linear-gradient(145deg, #6c9dec, #5275c1); /* Color azul para el botón de cerrar sesión */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animación al pasar el mouse */
+}
+
+.logout-btn:hover {
+  background-color: #c82333; /* Rojo más oscuro al hacer hover */
+  transform: scale(1.05); /* Efecto de escalado */
+}
+
+/* Cuadro de búsqueda */
+.search-box {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: flex-end; /* Alinea el contenido hacia la derecha */
+  align-items: flex-start; /* Alinea el contenido hacia la parte superior */
+  height: 100vh;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/c/c5/0_Kia_Morning_%28JA%29_FL_1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: grayscale(40%);
+  margin: 0; /* Elimina el margen por defecto */
+  padding: 0; /* Elimina el padding por defecto */
+}
+
+.container {
+  width: 150%; /* Ajusta el ancho al 50% del cuerpo, puedes aumentarlo según necesites */
+  min-height: 300px; /* Asegura una altura mínima */
+  margin-right: 1cm; /* Separación de 2 cm desde el lado derecho */
+  margin-left: 1cm;
+  margin-top: 1.5cm; /* Separación desde el margen superior */
+  background: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados opcionales */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra opcional */
+}
+
+

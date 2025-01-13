@@ -1,0 +1,11 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li><a routerLink="/admin" routerLinkActive="active" class="nav-item">Dashboard</a></li>
+    <li><a routerLink="/admin/list" routerLinkActive="active" class="nav-item">Usuarios</a></li>
+    <li name="vehiculos"><a routerLink="/admin/vehicles" routerLinkActive="active" class="nav-item">Vehículos</a></li>
+    <li><a routerLink="/admin/reports" routerLinkActive="active" class="nav-item">Reportes</a></li>
+    <li><a routerLink="/admin/maintenance" routerLinkActive="active" class="nav-item">Mantenimiento</a></li>    
+    <!-- Mostrar botón de Cerrar Sesión solo si el usuario está autenticado -->
+    <li *ngIf="isAuthenticated()"><button (click)="logout()" class="logout-btn">Cerrar Sesión</button></li>
+  </ul>
+</nav>

@@ -1,0 +1,15 @@
+<div class="vehicle-details">
+    <h2>{{ vehicle?.brand }} {{ vehicle?.model }}</h2>
+    <img [src]="vehicle?.imageUrl" alt="{{ vehicle?.brand }} {{ vehicle?.model }}" class="vehicle-image">
+    <div class="details-info">
+      <p><strong>Placa:</strong> {{ vehicle?.license_plate }}</p>
+      <p><strong>Precio de alquiler:</strong> ${{ vehicle?.rental_rate }}</p>
+      <p><strong>Estado:</strong> {{ vehicle?.status }}</p>
+      <p><strong>Asientos:</strong> {{ vehicle?.seats }}</p>
+      <p><strong>Puertas:</strong> {{ vehicle?.doors }}</p>
+      <p><strong>Tamaño de la cajuela:</strong> {{ vehicle?.trunk_size }}</p>
+      <p><strong>Color:</strong> {{ vehicle?.color }}</p>
+      <p><strong>Tipo de gasolina:</strong> {{ vehicle?.fuel_type }}</p>
+    </div>
+    <button (click)="openReservationModal()" class="reserve-button">Reservar</button>
+  </div>  
